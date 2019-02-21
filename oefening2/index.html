@@ -12,14 +12,14 @@
     <h1>Todo app</h1>
     <hr>
       Add new todo: <input type="text" v-model="newTodo"> 
-      <button @click="addTodo">Add</button>
+      <button v-bind:disabled="!inputValid" @click="addTodo">Add</button>
     <hr>
 
     <p v-if="!todos.length">No todos yet...</p>
     <ul v-else>
       <li v-for="(todo, index) in todos">
         {{ todo }} - <input type="checkbox"> - 
-        <button @click="todos.splice(index, 1)">X</button>
+        <button @click="deleteTodo(index)">X</button>
       </li>
     </ul>
   </div>
@@ -34,8 +34,18 @@
     },
     methods: {
       addTodo() {
-        this.todos.push(this.newTodo);
-        this.newTodo = '';
+        if (this.inputValid) {
+          this.todos.push(this.newTodo);
+          this.newTodo = '';
+        }
+      },
+      deleteTodo(index) {
+        this.todos.splice(index, 1);
+      }
+    },
+    computed: {
+      inputValid() {
+        return this.newTodo.length > 0;
       }
     }
   });
