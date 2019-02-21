@@ -18,8 +18,9 @@
 
     <p v-if="!todos.length">No todos yet...</p>
     <ul v-else>
-      <li v-for="todo in todos">
-        {{ todo }} - <input type="checkbox"> - <button>X</button>
+      <li v-for="(todo, index) in todos">
+        {{ todo }} - <input type="checkbox"> - 
+        <button @click="todos.splice(index, 1)">X</button>
       </li>
     </ul>
 
