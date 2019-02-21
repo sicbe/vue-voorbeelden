@@ -9,13 +9,35 @@
 <body>
 
   <div id="app">
+    <h1>Hallo, {{ name }}</h1>
+    <p v-bind:title="message_hover">
+      Bericht van Vue: {{ message }}
+    </p>
+    <ul>
+      <li v-for="score in scores">{{ score }}</li>
+    </ul>
 
+    <button @click="visible=!visible">Edit message</button>
+    <p v-if="visible">
+      Message: <input type="text" v-model="message">  
+    </p>
   </div>
   
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.min.js"></script>
   <script>
-  
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: "Hello from Vue!",
+        message_hover: "This is the message hover",
+        name: "Bert",
+        visible: false,
+        scores: [
+          1, 5, 7, 8, 9, 10
+        ]
+      }
+    });
   
   </script>
 </body>
