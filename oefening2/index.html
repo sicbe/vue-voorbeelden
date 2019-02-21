@@ -9,11 +9,10 @@
 <body>
 
   <div id="app">
-
     <h1>Todo app</h1>
     <hr>
       Add new todo: <input type="text" v-model="newTodo"> 
-      <button @click="todos.push(newTodo)">Add</button>
+      <button @click="addTodo">Add</button>
     <hr>
 
     <p v-if="!todos.length">No todos yet...</p>
@@ -23,21 +22,23 @@
         <button @click="todos.splice(index, 1)">X</button>
       </li>
     </ul>
-
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.min.js"></script>
   <script>
-  
   var app = new Vue({
     el: "#app",
     data: {
       todos: [],
       newTodo: ''
+    },
+    methods: {
+      addTodo() {
+        this.todos.push(this.newTodo);
+        this.newTodo = '';
+      }
     }
   });
-  
-  </script>
-  
+  </script> 
 </body>
 </html>
