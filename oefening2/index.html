@@ -12,13 +12,14 @@
 
     <h1>Todo app</h1>
     <hr>
-      Add new todo: <input type="text"> <button>Add</button>
+      Add new todo: <input type="text" v-model="newTodo"> 
+      <button @click="todos.push(newTodo)">Add</button>
     <hr>
 
-    <p>No todos yet...</p>
-    <ul>
-      <li>
-        Todo item - <input type="checkbox"> - <button>X</button>
+    <p v-if="!todos.length">No todos yet...</p>
+    <ul v-else>
+      <li v-for="todo in todos">
+        {{ todo }} - <input type="checkbox"> - <button>X</button>
       </li>
     </ul>
 
@@ -28,7 +29,11 @@
   <script>
   
   var app = new Vue({
-
+    el: "#app",
+    data: {
+      todos: [],
+      newTodo: ''
+    }
   });
   
   </script>
