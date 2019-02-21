@@ -29,9 +29,7 @@
   var app = new Vue({
     el: "#app",
     data: {
-      todos: localStorage.getItem('todos') 
-                ? JSON.parse(localStorage.getItem('todos')) 
-                : localStorage.setItem('todos', ''),
+      todos: [],
       newTodo: ''
     },
     methods: {
@@ -39,12 +37,10 @@
         if (this.inputValid) {
           this.todos.push(this.newTodo);
           this.newTodo = '';
-          localStorage.setItem('todos', JSON.stringify(this.todos))
         }
       },
       deleteTodo(index) {
         this.todos.splice(index, 1);
-        localStorage.setItem('todos', JSON.stringify(this.todos))
       }
     },
     computed: {
