@@ -1,6 +1,7 @@
 new Vue({
   el: '#app',
   data: {
+    show: 'all',
     activeNote: false,
   	notes: [
       { text: 'This is a first note', favorite: false },

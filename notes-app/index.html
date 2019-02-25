@@ -13,7 +13,10 @@
       <!-- Toolbar -->
       <div id="toolbar">
         <i class="glyphicon glyphicon-plus" @click="addNote"></i>
-        <i class="glyphicon glyphicon-star"></i>
+        <i class="glyphicon glyphicon-star" 
+            v-bind:class="{ starred:activeNote.favorite }" 
+            @click="activeNote.favorite = !activeNote.favorite"
+        ></i>
         <i class="glyphicon glyphicon-remove" @click="deleteNote"></i>
       </div>  
 
@@ -25,13 +28,19 @@
           <div class="btn-group btn-group-justified">
             <!-- All Notes button -->
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default active">
+              <button type="button" class="btn btn-default"
+                v-bind:class="{ active:show=='all' }"
+                @click="show='all'"
+              >
                 All Notes
               </button>
             </div>
             <!-- Favorites Button -->
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default">
+              <button type="button" class="btn btn-default"
+                v-bind:class="{ active:show=='favorites' }"
+                @click="show='favorites'"
+              >
                 Favorites
               </button>
             </div>
