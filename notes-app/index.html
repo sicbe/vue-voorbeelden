@@ -40,9 +40,11 @@
         <!-- render notes in a list -->
         <div class="container">
           <div class="list-group">
-            <a class="list-group-item" href="#">
+            <a class="list-group-item" href="#"
+               v-for="note in notes"
+            >
               <h4 class="list-group-item-heading">
-                This is a note title
+                {{ note.text }}
               </h4>
             </a>
           </div>
