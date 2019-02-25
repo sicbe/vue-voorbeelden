@@ -11,7 +11,7 @@
   <div id="app">
     <h1>Todo app</h1>
     <hr>
-      Add new todo: <input type="text" v-model="newTodo"> 
+      Add new todo: <input type="text" v-model="newTodo" @keyup.enter="addTodo"> 
       <button v-bind:disabled="!inputValid" @click="addTodo">Add</button>
     <hr>
 
