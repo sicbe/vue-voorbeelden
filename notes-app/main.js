@@ -8,6 +8,13 @@ new Vue({
     ]
   },
   methods: {
+    addNote() {
+      // lege note in active Note steken
+      this.activeNote = { text:'', favorite:false };
+      // activeNote pushen naar notes array
+      this.notes.push(this.activeNote);
+      // TODO: focus op textarea na toevoegen
+    },
     deleteNote() {
       // enkel verwijderen als er een item geselecteerd is
       if (this.activeNote != false) {
