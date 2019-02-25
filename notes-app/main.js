@@ -27,5 +27,20 @@ new Vue({
         this.activeNote = false;
       }
     }
+  },
+  computed: {
+    filteredNotes() {
+      // show == all
+      if (this.show=='all') {
+        // return alle notes
+        return this.notes;
+      } else {
+        // show === favorites
+        // return alleen notes met favorite=true
+        return this.notes.filter(function(note) {
+          return note.favorite==true;
+        });
+      }
+    }
   }
 })

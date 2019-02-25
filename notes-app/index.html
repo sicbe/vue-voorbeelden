@@ -50,7 +50,7 @@
         <div class="container">
           <div class="list-group">
             <a class="list-group-item" href="#"
-               v-for="note in notes"
+               v-for="note in filteredNotes"
                @click="activeNote=note"
                v-bind:class="{ active:note==activeNote }"
             >
