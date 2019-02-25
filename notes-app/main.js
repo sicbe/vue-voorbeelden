@@ -14,7 +14,8 @@ new Vue({
       this.activeNote = { text:'', favorite:false };
       // activeNote pushen naar notes array
       this.notes.push(this.activeNote);
-      // TODO: focus op textarea na toevoegen
+      // focus op textarea na toevoegen
+      document.getElementById('activeNote').focus();
     },
     deleteNote() {
       // enkel verwijderen als er een item geselecteerd is
@@ -37,9 +38,7 @@ new Vue({
       } else {
         // show === favorites
         // return alleen notes met favorite=true
-        return this.notes.filter(function(note) {
-          return note.favorite==true;
-        });
+        return this.notes.filter(note => note.favorite);
       }
     }
   }
