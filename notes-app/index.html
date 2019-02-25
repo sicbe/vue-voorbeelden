@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Notes | coligo.io</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <div id="app">
+
+      <!-- Toolbar -->
+      <div id="toolbar">
+        <i class="glyphicon glyphicon-plus"></i>
+        <i class="glyphicon glyphicon-star"></i>
+        <i class="glyphicon glyphicon-remove"></i>
+      </div>  
+
+      <!-- Notes list -->
+      <div id="notes-list">
+
+        <div id="list-header">
+          <h2>Notes | coligo</h2>
+          <div class="btn-group btn-group-justified">
+            <!-- All Notes button -->
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default active">
+                All Notes
+              </button>
+            </div>
+            <!-- Favorites Button -->
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default">
+                Favorites
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- render notes in a list -->
+        <div class="container">
+          <div class="list-group">
+            <a class="list-group-item" href="#">
+              <h4 class="list-group-item-heading">
+                This is a note title
+              </h4>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note Editor -->
+      <div id="note-editor">
+        <textarea class="form-control">
+        </textarea>
+      </div>
+      
+    </div>
+
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
