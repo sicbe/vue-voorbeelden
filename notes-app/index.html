@@ -42,6 +42,8 @@
           <div class="list-group">
             <a class="list-group-item" href="#"
                v-for="note in notes"
+               @click="activeNote=note"
+               v-bind:class="{ active:note==activeNote }"
             >
               <h4 class="list-group-item-heading">
                 {{ note.text }}
@@ -53,7 +55,7 @@
 
       <!-- Note Editor -->
       <div id="note-editor">
-        <textarea class="form-control">
+        <textarea class="form-control" v-model="activeNote.text">
         </textarea>
       </div>
       
