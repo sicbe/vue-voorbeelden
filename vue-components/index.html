@@ -12,10 +12,18 @@
     <button-counter></button-counter>
     <button-counter></button-counter>
     <button-counter></button-counter>
+    <hr>
+    <div>
+      <h1>Blog</h1>
+      <blog-post 
+        v-for="blogpost in blogposts"
+        v-bind:post="blogpost"
+        ></blog-post>
+    </div>
   </div>
   
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.js"></script>
   <script src="index.js"></script>
 </body>
 </html>
