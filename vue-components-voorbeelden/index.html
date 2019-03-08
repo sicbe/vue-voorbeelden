@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+    <message-box 
+      @add="saveMessage">
+    </message-box>
+    <message-list 
+      v-bind:messages="messages">
+    </message-list>
+    <message-box 
+      @add="saveMessage">
+    </message-box>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
