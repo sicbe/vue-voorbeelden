@@ -9,9 +9,13 @@
 <body>
 
   <div id="app">
-    <button-counter></button-counter>
-    <button-counter></button-counter>
-    <button-counter></button-counter>
+    <p>
+      Total clicks: {{ totalClicks }}
+    </p>
+    <hr>
+    <button-counter @increase="totalClicks++"></button-counter>
+    <button-counter @increase="totalClicks++"></button-counter>
+    <button-counter @increase="totalClicks--"></button-counter>
     <hr>
     <div>
       <h1>Blog</h1>
@@ -20,9 +24,10 @@
         v-bind:post="blogpost"
         ></blog-post>
     </div>
+    <hr>
+    <likes count="10"></likes>
   </div>
   
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.js"></script>
   <script src="index.js"></script>
 </body>

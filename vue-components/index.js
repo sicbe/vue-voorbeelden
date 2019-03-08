@@ -4,8 +4,14 @@ Vue.component('button-counter', {
       counter: 0
     }
   },
+  methods: {
+    increaseCounter() {
+      this.counter++;
+      this.$emit('increase');
+    }
+  },
   template: `
-    <button @click="counter++">
+    <button @click="increaseCounter">
       <likes v-bind:count="counter"></likes>
     </button>
   `
@@ -34,6 +40,7 @@ Vue.component('likes', {
 new Vue({
   el: "#app",
   data: {
+    totalClicks: 0,
     blogposts: [
       {id: 1, title:'Eerste post', likes: 5 },
       {id: 2, title: 'Tweede post', likes: 10 },
